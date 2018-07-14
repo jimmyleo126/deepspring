@@ -4,5 +4,33 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     
-    <bean id="myTestBean" class="deepspring.bean.MyTestBean"></bean>
+    <!-- <bean id="myTestBean" autowire="byName" scope="sd" init-method="init" class="deepspring.bean.MyTestBean">
+    	<meta key="testStr" value="aaaaaa"></meta>
+    </bean>
+    <bean class=""></bean> -->
+    
+    <!-- <bean id="getBeanTest" class="deepspring.bean.GetBeanTest">
+    	<lookup-method name="hh" bean="student"/>
+    </bean> -->
+    
+    <!-- <bean id="testChangeMethod" class="deepspring.bean.TestChangeMethod">
+    	<replaced-method name="changeMe" replacer="replacer"></replaced-method>
+    </bean -->
+    
+    <!-- <bean id="replacer" class="deepspring.bean.TestMethodReplacer"></bean> -->
+    
+    <!-- <bean id="teacher" class="deepspring.bean.Teacher"></bean>
+    
+    <bean id="student" class="deepspring.bean.Student"></bean> -->
+    
+    
+    <bean id="helloBean" class="deepspring.bean.HelloBean">
+    	<constructor-arg index="0">
+    		<value>好假</value>
+    	</constructor-arg>
+    	<constructor-arg index="1">
+    		<value>你好</value>
+    	</constructor-arg>
+    </bean>
+    
 </beans>
