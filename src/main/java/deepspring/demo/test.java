@@ -6,22 +6,28 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
-import deepspring.bean.GetBeanTest;
-import deepspring.bean.HelloBean;
+import deepspring.application.MyApplicationContext;
+import deepspring.aware.AwareTest;
+import deepspring.bean.Car;
 import deepspring.bean.TestChangeMethod;
+import deepspring.dependency.TestA;
+import deepspring.factory.CarFactoryBean;
+import deepspring.processor.PostProcessorTest;
 
 public class test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		BeanFactory bf = new XmlBeanFactory(new ClassPathResource("beanFactoryTest.xml"));
+//		BeanFactory mbf = new XmlBeanFactory(new ClassPathResource("beanFactoryTest.xml"));
 //		GetBeanTest bean = (GetBeanTest) bf.getBean("getBeanTest");
 //		bean.showMe();
 		
-		//ApplicationContext bf = new ClassPathXmlApplicationContext("beanFactoryTest.xml");
+//		ApplicationContext bf = new ClassPathXmlApplicationContext("beanFactoryTest.xml");
 		
-		HelloBean test = (HelloBean) bf.getBean("helloBean");
-		//test.changeMe("wo shi liujing");
+		ApplicationContext mbf = new MyApplicationContext("beanFactoryTest.xml");
+		
+		PostProcessorTest test = (PostProcessorTest) mbf.getBean("myBeanPost");
+		System.out.println("");
 	}
 
 }

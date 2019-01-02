@@ -6,31 +6,51 @@
     
     <!-- <bean id="myTestBean" autowire="byName" scope="sd" init-method="init" class="deepspring.bean.MyTestBean">
     	<meta key="testStr" value="aaaaaa"></meta>
-    </bean>
+    </bean>0000
     <bean class=""></bean> -->
     
     <!-- <bean id="getBeanTest" class="deepspring.bean.GetBeanTest">
     	<lookup-method name="hh" bean="student"/>
     </bean> -->
-    
-    <!-- <bean id="testChangeMethod" class="deepspring.bean.TestChangeMethod">
+   <!--  <alias name="testChangeMethod" alias="nima"/>
+   <bean id="testChangeMethod" class="deepspring.bean.TestChangeMethod">
     	<replaced-method name="changeMe" replacer="replacer"></replaced-method>
-    </bean -->
-    
-    <!-- <bean id="replacer" class="deepspring.bean.TestMethodReplacer"></bean> -->
-    
-    <!-- <bean id="teacher" class="deepspring.bean.Teacher"></bean>
-    
-    <bean id="student" class="deepspring.bean.Student"></bean> -->
-    
-    
-    <bean id="helloBean" class="deepspring.bean.HelloBean">
-    	<constructor-arg index="0">
-    		<value>好假</value>
-    	</constructor-arg>
-    	<constructor-arg index="1">
-    		<value>你好</value>
-    	</constructor-arg>
     </bean>
+    
+    <bean id="replacer" class="deepspring.bean.TestMethodReplacer"></bean>
+    
+    <bean id="teacher" class="deepspring.bean.Teacher"></bean>
+    
+    <bean id="student" class="deepspring.bean.Student"></bean>
+    
+    <bean id="carFactory" class="deepspring.factory.StaticCarFactory"></bean>
+
+    <bean id="car2" factory-method="getCar" factory-bean="carFactory">
+        <constructor-arg value="ford"></constructor-arg>
+    </bean> -->
+    
+    <!-- <bean id="car1" class="deepspring.factory.CarFactoryBean">
+        <property name="brand" value="BWM"></property>
+    </bean> -->
+    
+    <!-- <bean id="testA" class="deepspring.dependency.TestA" autowire="byType">
+        <constructor-arg value="草拟吗"></constructor-arg>
+        <property name="testB" ref="testB"></property>
+    </bean> -->
+    
+    <!-- <bean id="testB" class="deepspring.dependency.TestB">
+        <constructor-arg name="testC" ref="testC"></constructor-arg>
+        <property name="testC" ref="testC"></property>
+    </bean> -->
+    
+    <!-- <bean id="testC" class="deepspring.dependency.TestC">
+        <constructor-arg name="testA" ref="testA"></constructor-arg>
+        <property name="testA" ref="testA"></property>
+    </bean> -->
+    
+    <bean id="myBeanPost" class="deepspring.processor.PostProcessorTest" autowire="byType"></bean>
+    <bean id="hello" class="deepspring.aware.Hello"></bean>
+    <bean id="awareTest" class="deepspring.aware.AwareTest" init-method="inita"></bean>
+
     
 </beans>

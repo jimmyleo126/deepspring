@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <!-- <context:annotation-config/> -->
+    
+    <!-- <bean id="hello" class="deepspring.chapter06.l04.Hello"></bean>
+
+    <bean id="teacher" class="deepspring.chapter06.l04.Teacher" autowire="byType"></bean> -->
+    
+    <!-- <context:property-placeholder location="classpath:jdbc.properties"/> -->
+    
+    <!-- <bean id="message" class="deepspring.chapter06.l06.HelloMessage">
+    	<property name="mes">
+    		<value>${bean.message}</value>
+    	</property>
+    </bean> -->
+    
+    <!-- <bean id="mesHandler" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    	<property name="locations">
+    		<list>
+    			<value>chapter06\l06\bean.properties</value>
+    		</list>
+    	</property>
+    </bean> -->
+    
+    <!-- 自定义BeanFactoryPostProcessor -->
+    
+    
+    <!-- <bean id="bfpp" class="deepspring.chapter06.l06.ObscenityRemovingBeanFactoryPostProcessor">
+    	<property name="obscenties">
+    		<set>
+    			<value>bollocks</value>
+    			<value>winky</value>
+    			<value>bum</value>
+    			<value>Microsoft</value>
+    		</set>
+    	</property>
+    </bean> -->
+    
+    <!-- <bean id="myPost" class="deepspring.chapter06.l06.MyInstantiationAwareBeanPostProcessor"></bean> -->
+    
+    <!-- <bean id="simpleBean"  class="deepspring.chapter06.l06.SimplePostProcess" name="ui, io">
+    	<property name="connectionString" value="bollocks"></property>
+    	<property name="password" value="imaginecup"></property>
+    	<property name="username" value="Microsoft"></property>
+    </bean> -->
+    
+    <!-- <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+    	<property name="basenames">
+    		<list>
+    			<value>chapter06/l06/test/messages</value>
+    		</list>
+    	</property>
+    </bean> -->
+    
+    <!-- <bean id="testListener" class="deepspring.chapter06.l06.TestListenter"></bean> -->
+    
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+    	<property name="converters">
+    		<list>
+    			<bean class="deepspring.chapter06.l06.String2DateConverter"></bean>
+    		</list>
+    	</property>
+    </bean>
+
+</beans>
