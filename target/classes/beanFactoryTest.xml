@@ -6,12 +6,11 @@
     
     <!-- <bean id="myTestBean" autowire="byName" scope="sd" init-method="init" class="deepspring.bean.MyTestBean">
     	<meta key="testStr" value="aaaaaa"></meta>
-    </bean>0000
-    <bean class=""></bean> -->
-    
-    <!-- <bean id="getBeanTest" class="deepspring.bean.GetBeanTest">
-    	<lookup-method name="hh" bean="student"/>
     </bean> -->
+    
+    <bean id="getBeanTest" class="deepspring.bean.GetBeanTest">
+    	<lookup-method name="hh" bean="student"/>
+    </bean>
    <!--  <alias name="testChangeMethod" alias="nima"/>
    <bean id="testChangeMethod" class="deepspring.bean.TestChangeMethod">
     	<replaced-method name="changeMe" replacer="replacer"></replaced-method>
@@ -48,9 +47,9 @@
         <property name="testA" ref="testA"></property>
     </bean> -->
     
-    <bean id="myBeanPost" class="deepspring.processor.PostProcessorTest" autowire="byType"></bean>
+    <!-- <bean id="myBeanPost" class="deepspring.processor.PostProcessorTest" autowire="byType"></bean>
     <bean id="hello" class="deepspring.aware.Hello"></bean>
-    <bean id="awareTest" class="deepspring.aware.AwareTest" init-method="inita"></bean>
+    <bean id="awareTest" class="deepspring.aware.AwareTest" init-method="inita"></bean> -->
 
     
 </beans>

@@ -19,7 +19,7 @@ public class Test {
 //		BeanFactory bf = new XmlBeanFactory(new ClassPathResource("chapter07/l01/beanFactoryTest.xml"));
 		ApplicationContext context = new ClassPathXmlApplicationContext("chapter07/l01/beanFactoryTest.xml");
 //		
-		TestBean tb = (TestBean) context.getBean("test");
+		IBean tb = (IBean) context.getBean("test");
 		tb.test();
 		
 	

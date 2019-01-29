@@ -17,6 +17,11 @@ public class Properties {
 		properties.load0(properties.new LineReader(inStream));
 	}
 
+	/**
+	 * 读取prperties文件属性
+	 * @param lr
+	 * @throws IOException
+	 */
 	private void load0 (LineReader lr) throws IOException {
         char[] convtBuf = new char[1024];
         int limit;

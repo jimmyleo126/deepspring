@@ -1,6 +1,6 @@
 package deepspring.chapter07.l01;
 
-public class TestBean {
+public class TestBean implements IBean{
 	
 	private String testStr = "testStr";
 
